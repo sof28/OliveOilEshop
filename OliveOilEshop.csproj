@@ -7,7 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Features\ProductFeature\" />
+      <Folder Include="Features\ProductFeature\DeleteProduct\" />
+      <Folder Include="Features\ProductFeature\UpdateProduct.cs\" />
       <Folder Include="Migrations\" />
     </ItemGroup>
 
@@ -15,6 +16,7 @@
       <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="9.0.0" />
       <PackageReference Include="FluentValidation" Version="12.1.1" />
       <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
+      <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.0" />
       <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.5" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.4" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.4">
@@ -29,6 +31,7 @@
       <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="10.0.4" />
       <PackageReference Include="Scalar.AspNetCore" Version="2.13.3" />
       <PackageReference Include="Scrutor" Version="7.0.0" />
+      <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.7.1" />
     </ItemGroup>
 
 </Project>

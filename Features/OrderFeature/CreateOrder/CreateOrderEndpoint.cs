@@ -1,4 +1,5 @@
-﻿using OliveOilEshop.Abstractions;
+﻿using Microsoft.AspNetCore.Authorization;
+using OliveOilEshop.Abstractions;
 using OliveOilEshop.Constants;
 using OliveOilEshop.Extensions;
 
@@ -8,7 +9,7 @@ internal sealed class CreateOrderEndpoint : IApiEndpoint
 {
     public void MapEndpoint(WebApplication app)
     {
-        app.MapPost("orders", async (IHandler<CreateOrderRequest, Result<CreateOrderResponse>> handler, CreateOrderRequest command, CancellationToken cancellationToken) =>
+        app.MapPost("orders", [Authorize] async (IHandler<CreateOrderRequest, Result<CreateOrderResponse>> handler, CreateOrderRequest command, CancellationToken cancellationToken) =>
         {
             var result = await handler.HandleAsync(command, cancellationToken);
             return result.Match(

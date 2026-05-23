@@ -1,11 +1,13 @@
 using FluentValidation;
-using Microsoft.EntityFrameworkCore;
 using OliveOilEshop.Exceptions;
 using OliveOilEshop.Extensions;
 using OliveOilEshop.Features.OrderFeature.CreateOrder;
 using OliveOilEshop.Repository;
 using Scalar.AspNetCore;
 using System.Reflection;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -29,6 +31,28 @@ builder.Services.AddHandlersFromAssembly(typeof(Program).Assembly);
 
 builder.Services.AddExceptionHandler<CustomExceptionHandler>()
             .AddProblemDetails();
+
+// JWT Authentication configuration
+var jwtSettings = builder.Configuration.GetSection("Jwt");
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = jwtSettings["Issuer"],
+        ValidAudience = jwtSettings["Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["Key"]))
+    };
+});
+builder.Services.AddAuthorization();
 
 
 var app = builder.Build();
@@ -57,7 +81,10 @@ app.MapScalarApiReference(options =>
 });
 
 app.UseHttpsRedirection();
+
 app.UseExceptionHandler();
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.Run();
 

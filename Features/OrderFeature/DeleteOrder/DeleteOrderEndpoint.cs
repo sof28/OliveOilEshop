@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using OliveOilEshop.Abstractions;
 using OliveOilEshop.Constants;
 using OliveOilEshop.Extensions;
-using OliveOilEshop.Features.OrderFeature.CreateOrder;
 
 namespace OliveOilEshop.Features.OrderFeature.DeleteOrder
 {
@@ -10,7 +10,7 @@ namespace OliveOilEshop.Features.OrderFeature.DeleteOrder
     {
         public void MapEndpoint(WebApplication app)
         {
-            app.MapDelete("deleteOrder/{id}", async (IHandler<DeleteOrderRequest, Result<DeleteOrderResponse>> handler, [FromRoute] int id, CancellationToken cancellationToken) =>
+            app.MapDelete("deleteOrder/{id}", [Authorize] async (IHandler<DeleteOrderRequest, Result<DeleteOrderResponse>> handler, [FromRoute] int id, CancellationToken cancellationToken) =>
             {
                 var result = await handler.HandleAsync(new DeleteOrderRequest(id), cancellationToken);
                 return result.Match(
