@@ -1,0 +1,76 @@
+﻿.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+
+  .brand-icon { font-size: 1.8rem; }
+  .brand-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #3d5a2a;
+    letter-spacing: -0.5px;
+  }
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+
+    &:hover, &.active { color: #3d5a2a; }
+  }
+}
+
+.cart-link {
+  position: relative;
+  font-size: 1.4rem;
+
+  .cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: #c8860a;
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar-links { gap: 1rem; }
+  .brand-name { display: none; }
+}
+
