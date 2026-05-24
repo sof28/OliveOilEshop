@@ -97,4 +97,6 @@ app.UseCors("AllowClientApp"); // Enable CORS for Angular frontend
 app.UseAuthentication();
 app.UseAuthorization();
 
+await app.SeedProductsAsync();
+
 app.Run();

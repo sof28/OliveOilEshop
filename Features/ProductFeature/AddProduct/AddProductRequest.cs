@@ -1,6 +1,3 @@
 ﻿namespace OliveOilEshop.Features.ProductFeature;
 
-public class AddProductRequest
-{
-    
-}
+public sealed record AddProductRequest(string Name, string? Description, decimal Price, string? ImageUrl);
