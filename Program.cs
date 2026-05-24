@@ -54,6 +54,16 @@ builder.Services.AddAuthentication(options =>
 });
 builder.Services.AddAuthorization();
 
+// Add CORS policy for Angular frontend
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowClientApp",
+        policy => policy
+            .WithOrigins("http://localhost:4200") // Angular dev server default
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials());
+});
 
 var app = builder.Build();
 
@@ -83,8 +93,8 @@ app.MapScalarApiReference(options =>
 app.UseHttpsRedirection();
 
 app.UseExceptionHandler();
+app.UseCors("AllowClientApp"); // Enable CORS for Angular frontend
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.Run();
-
