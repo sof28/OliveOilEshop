@@ -23,6 +23,7 @@ namespace OliveOilEshop.Extensions
 
             services.Decorate(typeof(IHandler<,>), typeof(ValidationDecorator<,>));
             services.Decorate(typeof(IHandler<,>), typeof(LoggingDecorator<,>));
+            services.Decorate(typeof(IHandler<,>), typeof(AuthorizationDecorator<,>));
             return services;
         }
     }
