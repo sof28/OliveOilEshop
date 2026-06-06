@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OliveOilEshop.Abstractions;
 using OliveOilEshop.Constants;
@@ -8,7 +8,7 @@ namespace OliveOilEshop.Features.OrderFeature.DeleteOrder
 {
     public class DeleteOrderEndpoint : IApiEndpoint
     {
-        public void MapEndpoint(WebApplication app)
+        public void MapEndpoint(IEndpointRouteBuilder app)
         {
             app.MapDelete("deleteOrder/{id}", [Authorize] async (IHandler<DeleteOrderRequest, Result<DeleteOrderResponse>> handler, [FromRoute] int id, CancellationToken cancellationToken) =>
             {

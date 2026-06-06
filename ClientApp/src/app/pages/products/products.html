@@ -7,30 +7,30 @@
 
 <section class="products-section">
   <div class="container">
-    @if (loading) {
+    @if (loading()) {
       <div class="loading-state">
         <div class="spinner"></div>
         <p>Loading our finest oils...</p>
       </div>
-    } @else if (error) {
+    } @else if (error()) {
       <div class="error-state">
         <span>⚠️</span>
-        <p>{{ error }}</p>
+        <p>{{ error() }}</p>
       </div>
-    } @else if (products.length === 0) {
+    } @else if (products().length === 0) {
       <div class="empty-state">
         <span>🫒</span>
         <p>No products available yet. Check back soon!</p>
       </div>
     } @else {
       <div class="products-grid">
-        @for (product of products; track product.id) {
+        @for (product of products(); track product.id) {
           <app-product-card [product]="product" (addToCart)="onAddToCart($event)" />
         }
       </div>
     }
 
-    @if (addedToCartId !== null) {
+    @if (addedToCartId() !== null) {
       <div class="toast">✅ Added to cart!</div>
     }
   </div>

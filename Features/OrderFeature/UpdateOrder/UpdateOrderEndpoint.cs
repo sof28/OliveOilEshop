@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using OliveOilEshop.Abstractions;
 using OliveOilEshop.Constants;
 using OliveOilEshop.Extensions;
@@ -7,7 +7,7 @@ namespace OliveOilEshop.Features.OrderFeature.UpdateOrder;
 
 internal sealed class UpdateOrderEndpoint : IApiEndpoint
 {
-    public void MapEndpoint(WebApplication app)
+    public void MapEndpoint(IEndpointRouteBuilder app)
     {
         app.MapPut("order/{id}", [Authorize] async (IHandler<UpdateOrderRequest, Result<UpdateOrderResponse>> handler, long id, UpdateOrderRequest command, CancellationToken cancellationToken) =>
         {

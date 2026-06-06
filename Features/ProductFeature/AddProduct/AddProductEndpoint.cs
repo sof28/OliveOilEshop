@@ -1,4 +1,4 @@
-﻿using OliveOilEshop.Abstractions;
+using OliveOilEshop.Abstractions;
 using OliveOilEshop.Constants;
 using OliveOilEshop.Extensions;
 
@@ -6,7 +6,7 @@ namespace OliveOilEshop.Features.ProductFeature;
 
 public class AddProductEndpoint : IApiEndpoint
 {
-    public void MapEndpoint(WebApplication app)
+    public void MapEndpoint(IEndpointRouteBuilder app)
     {
         app.MapPost("products", async (
             IHandler<AddProductRequest, Result<AddProductResponse>> handler,

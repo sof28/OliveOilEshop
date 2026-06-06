@@ -1,7 +1,7 @@
-﻿namespace OliveOilEshop.Abstractions
+namespace OliveOilEshop.Abstractions
 {
     public interface IApiEndpoint
     {
-        void MapEndpoint(WebApplication app);
+        void MapEndpoint(IEndpointRouteBuilder app);
     }
 }
