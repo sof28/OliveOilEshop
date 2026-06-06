@@ -1,4 +1,4 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit, signal, ChangeDetectorRef } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { CartService } from '../../services/cart.service';
 import { Product } from '../../models/product.model';
@@ -12,33 +12,38 @@ import { ProductCardComponent } from '../../components/product-card/product-card
   styleUrl: './products.scss',
 })
 export class ProductsComponent implements OnInit {
-  products: Product[] = [];
-  loading = true;
-  error: string | null = null;
-  addedToCartId: number | null = null;
+  products = signal<Product[]>([]);
+  loading = signal(true);
+  error = signal<string | null>(null);
+  addedToCartId = signal<number | null>(null);
 
   constructor(
     private productService: ProductService,
     private cartService: CartService,
+    private cdr: ChangeDetectorRef,
   ) {}
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe({
       next: (products) => {
-        this.products = products;
-        this.loading = false;
+        this.products.set(products);
+        this.loading.set(false);
+        this.cdr.detectChanges();
       },
       error: () => {
-        this.error = 'Failed to load products. Please try again.';
-        this.loading = false;
+        this.error.set('Failed to load products. Please try again.');
+        this.loading.set(false);
+        this.cdr.detectChanges();
       },
     });
   }
 
   onAddToCart(product: Product): void {
     this.cartService.addToCart(product);
-    this.addedToCartId = product.id;
-    setTimeout(() => (this.addedToCartId = null), 2000);
+    this.addedToCartId.set(product.id);
+    setTimeout(() => this.addedToCartId.set(null), 2000);
   }
 }
+
+
 

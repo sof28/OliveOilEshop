@@ -90,10 +90,9 @@ app.MapScalarApiReference(options =>
 
 });
 
-app.UseHttpsRedirection();
-
-app.UseExceptionHandler();
 app.UseCors("AllowClientApp"); // Enable CORS for Angular frontend
+app.UseHttpsRedirection();
+app.UseExceptionHandler();
 app.UseAuthentication();
 app.UseAuthorization();
 

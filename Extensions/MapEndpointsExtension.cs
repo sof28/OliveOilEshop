@@ -22,10 +22,11 @@ namespace OliveOilEshop.Extensions
         public static WebApplication MapApiEndpoints(this WebApplication app)
         {
             var endpoints = app.Services.GetRequiredService<IEnumerable<IApiEndpoint>>();
+            var group = app.MapGroup("api");
 
             foreach (var endpoint in endpoints)
             {
-                endpoint.MapEndpoint(app);
+                endpoint.MapEndpoint(group);
             }
 
             return app;

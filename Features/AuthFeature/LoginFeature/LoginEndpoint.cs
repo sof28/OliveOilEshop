@@ -1,11 +1,11 @@
-﻿using OliveOilEshop.Abstractions;
+using OliveOilEshop.Abstractions;
 using OliveOilEshop.Extensions;
 
 namespace OliveOilEshop.Features.AuthFeature.Login;
 
 internal sealed class LoginEndpoint : IApiEndpoint
 {
-    public void MapEndpoint(WebApplication app)
+    public void MapEndpoint(IEndpointRouteBuilder app)
     {
         app.MapPost("/api/auth/login", async (IHandler<LoginRequest,Result<LoginResponse>> handler, LoginRequest command, CancellationToken cancellationToken) =>
         {

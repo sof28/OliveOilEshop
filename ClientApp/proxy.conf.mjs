@@ -1,0 +1,9 @@
+﻿export default {
+  '/api': {
+    target: 'https://localhost:7196',
+    secure: false,
+    changeOrigin: true,
+    logLevel: 'debug',
+  },
+};
+
