@@ -1,0 +1,89 @@
+<div class="admin-layout">
+  <aside class="admin-sidebar">
+    <div class="admin-brand"><span>🫒</span><span>Admin Panel</span></div>
+    <nav class="admin-nav">
+      <a routerLink="/admin" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><span>📊</span> Dashboard</a>
+      <a routerLink="/admin/products" routerLinkActive="active"><span>🫒</span> Products</a>
+      <a routerLink="/admin/orders" routerLinkActive="active"><span>📦</span> Orders</a>
+    </nav>
+    <a routerLink="/" class="admin-nav-back">← Back to Shop</a>
+  </aside>
+
+  <main class="admin-main">
+    <div class="page-header">
+      <div>
+        <h1>Orders</h1>
+        <p>{{ orders.length }} order(s) total</p>
+      </div>
+    </div>
+
+    @if (error) {
+      <div class="alert alert-error">{{ error }}</div>
+    }
+    @if (successMessage) {
+      <div class="alert alert-success">{{ successMessage }}</div>
+    }
+
+    @if (loading) {
+      <div class="loading">Loading orders...</div>
+    } @else if (orders.length === 0) {
+      <div class="empty-state"><span>📦</span><p>No orders yet.</p></div>
+    } @else {
+      <div class="table-wrapper">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Customer</th>
+              <th>Email</th>
+              <th>Address</th>
+              <th>Total</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (order of orders; track order.id) {
+              <tr>
+                <td class="order-id">#{{ order.id }}</td>
+                <td>{{ order.customerName }}</td>
+                <td>{{ order.customerEmail }}</td>
+                <td class="order-address">{{ order.customerAddress }}</td>
+                <td>€{{ order.totalPrice.toFixed(2) }}</td>
+                <td>{{ order.orderDate | date: 'dd/MM/yy' }}</td>
+                <td>
+                  @if (editingOrderId === order.id) {
+                    <select [(ngModel)]="editingStatus" class="status-select">
+                      @for (s of statuses; track s.value) {
+                        <option [value]="s.value">{{ s.label }}</option>
+                      }
+                    </select>
+                  } @else {
+                    <span class="status-badge {{ getStatusClass(order.status) }}">
+                      {{ getStatusLabel(order.status) }}
+                    </span>
+                  }
+                </td>
+                <td>
+                  @if (editingOrderId === order.id) {
+                    <div class="action-btns">
+                      <button class="btn-icon" (click)="saveStatus(order)" title="Save">💾</button>
+                      <button class="btn-icon" (click)="cancelEdit()" title="Cancel">✖️</button>
+                    </div>
+                  } @else {
+                    <div class="action-btns">
+                      <button class="btn-icon" (click)="startEditStatus(order)" title="Change status">✏️</button>
+                      <button class="btn-icon" (click)="delete(order.id)" title="Delete">🗑️</button>
+                    </div>
+                  }
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    }
+  </main>
+</div>
+

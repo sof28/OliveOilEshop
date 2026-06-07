@@ -1,0 +1,103 @@
+<div class="admin-layout">
+  <aside class="admin-sidebar">
+    <div class="admin-brand"><span>🫒</span><span>Admin Panel</span></div>
+    <nav class="admin-nav">
+      <a routerLink="/admin" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><span>📊</span> Dashboard</a>
+      <a routerLink="/admin/products" routerLinkActive="active"><span>🫒</span> Products</a>
+      <a routerLink="/admin/orders" routerLinkActive="active"><span>📦</span> Orders</a>
+    </nav>
+    <a routerLink="/" class="admin-nav-back">← Back to Shop</a>
+  </aside>
+
+  <main class="admin-main">
+    <div class="page-header">
+      <div>
+        <h1>Products</h1>
+        <p>{{ products.length }} product(s) in catalogue</p>
+      </div>
+      <button class="btn btn-primary" (click)="openNew()">+ Add Product</button>
+    </div>
+
+    @if (error) {
+      <div class="alert alert-error">{{ error }}</div>
+    }
+    @if (successMessage) {
+      <div class="alert alert-success">{{ successMessage }}</div>
+    }
+
+    <!-- Edit / New Form -->
+    @if (editingProduct) {
+      <div class="form-card">
+        <h2>{{ isNew ? 'Add New Product' : 'Edit Product' }}</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Name *</label>
+            <input type="text" [(ngModel)]="editingProduct.name" placeholder="Product name" />
+          </div>
+          <div class="form-group">
+            <label>Price *</label>
+            <input type="number" [(ngModel)]="editingProduct.price" placeholder="0.00" min="0" step="0.01" />
+          </div>
+          <div class="form-group full-width">
+            <label>Description</label>
+            <textarea [(ngModel)]="editingProduct.description" placeholder="Product description" rows="3"></textarea>
+          </div>
+          <div class="form-group full-width">
+            <label>Image URL</label>
+            <input type="text" [(ngModel)]="editingProduct.imageUrl" placeholder="https://..." />
+          </div>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
+          <button class="btn btn-primary" (click)="save()" [disabled]="saving">
+            {{ saving ? 'Saving...' : (isNew ? 'Add Product' : 'Save Changes') }}
+          </button>
+        </div>
+      </div>
+    }
+
+    <!-- Products Table -->
+    @if (loading) {
+      <div class="loading">Loading products...</div>
+    } @else if (products.length === 0) {
+      <div class="empty-state"><span>🫒</span><p>No products yet. Add your first one!</p></div>
+    } @else {
+      <div class="table-wrapper">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (product of products; track product.id) {
+              <tr>
+                <td>
+                  @if (product.imageUrl) {
+                    <img [src]="product.imageUrl" [alt]="product.name" class="product-thumb" />
+                  } @else {
+                    <span class="no-img">🫒</span>
+                  }
+                </td>
+                <td class="product-name">{{ product.name }}</td>
+                <td class="product-desc">{{ product.description ?? '—' }}</td>
+                <td>{{ product.price | currency: 'EUR' }}</td>
+                <td>
+                  <div class="action-btns">
+                    <button class="btn-icon edit" (click)="openEdit(product)" title="Edit">✏️</button>
+                    <button class="btn-icon delete" (click)="delete(product.id)" title="Delete">🗑️</button>
+                  </div>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    }
+  </main>
+</div>
+

@@ -16,6 +16,14 @@
           }
         }
       </a>
+      @if (authService.isAdmin()) {
+        <a routerLink="/admin" routerLinkActive="active" class="admin-link">⚙️ Admin</a>
+      }
+      @if (authService.isLoggedIn()) {
+        <button class="btn-logout" (click)="logout()">Sign Out</button>
+      } @else {
+        <a routerLink="/login" routerLinkActive="active" class="login-link">Sign In</a>
+      }
     </div>
   </div>
 </nav>

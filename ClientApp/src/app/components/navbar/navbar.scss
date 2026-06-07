@@ -69,6 +69,37 @@
   }
 }
 
+.admin-link {
+  color: #c8860a !important;
+  font-weight: 600 !important;
+}
+
+.login-link {
+  background: #3d5a2a;
+  color: #fff !important;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  transition: background 0.2s;
+
+  &:hover { background: #2d4320; }
+}
+
+.btn-logout {
+  background: none;
+  border: 1.5px solid #ccc;
+  color: #555;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  transition: border-color 0.2s, color 0.2s;
+
+  &:hover { border-color: #c0392b; color: #c0392b; }
+}
+
 @media (max-width: 600px) {
   .navbar-links { gap: 1rem; }
   .brand-name { display: none; }
