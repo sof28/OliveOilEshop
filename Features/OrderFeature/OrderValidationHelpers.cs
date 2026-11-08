@@ -1,7 +1,7 @@
-﻿using OliveOilEshop.Entities;
-using OliveOilEshop.Repository;
+using ModularCommerce.Entities;
+using ModularCommerce.Repository;
 
-namespace OliveOilEshop.Features.OrderFeature
+namespace ModularCommerce.Features.OrderFeature
 {
     public static class OrderValidationHelpers
     {
@@ -12,3 +12,4 @@ namespace OliveOilEshop.Features.OrderFeature
         }
     }
 }
+

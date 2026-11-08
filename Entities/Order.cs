@@ -1,6 +1,6 @@
-using OliveOilEshop.Enums;
+using ModularCommerce.Enums;
 
-namespace OliveOilEshop.Entities;
+namespace ModularCommerce.Entities;
 
 public class Order
 {

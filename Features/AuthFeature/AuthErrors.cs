@@ -1,6 +1,6 @@
-﻿using OliveOilEshop.Abstractions.Errors;
+using ModularCommerce.Abstractions.Errors;
 
-namespace OliveOilEshop.Features.AuthFeature;
+namespace ModularCommerce.Features.AuthFeature;
 
 internal static class AuthErrors
 {

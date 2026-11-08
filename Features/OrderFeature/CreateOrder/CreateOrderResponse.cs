@@ -1,6 +1,6 @@
-﻿using OliveOilEshop.Entities;
+using ModularCommerce.Entities;
 
-namespace OliveOilEshop.Features.OrderFeature.CreateOrder
+namespace ModularCommerce.Features.OrderFeature.CreateOrder
 {
     public sealed record CreateOrderResponse(DateTime OrderDate, decimal TotalPrice, string CustomerAddress, string CustomerEmail, string CustomerName, List<OrderItem> OrderItems, long? UserId);
 }

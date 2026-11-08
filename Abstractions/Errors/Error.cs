@@ -1,4 +1,4 @@
-﻿namespace OliveOilEshop.Abstractions.Errors
+namespace ModularCommerce.Abstractions.Errors
 {
     public record Error(string Code, string? Description = default, ErrorType Type = ErrorType.Failure)
     {
@@ -41,3 +41,4 @@
         Custom
     }
 }
+

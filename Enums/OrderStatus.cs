@@ -1,4 +1,4 @@
-﻿namespace OliveOilEshop.Enums
+namespace ModularCommerce.Enums
 {
     public enum OrderStatus : short
     {
@@ -9,3 +9,4 @@
         Success = 4
     }
 }
+

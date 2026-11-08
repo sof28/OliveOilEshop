@@ -1,4 +1,4 @@
-﻿namespace OliveOilEshop.Abstractions.Errors
+namespace ModularCommerce.Abstractions.Errors
 {
     public sealed record ValidationError : Error
     {
@@ -17,3 +17,4 @@
             new([.. results.Where(r => r.IsFailure).Select(r => r.Error)]);
     }
 }
+

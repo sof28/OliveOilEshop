@@ -1,15 +1,15 @@
-﻿using OliveOilEshop.Abstractions;
-using OliveOilEshop.Database;
-using OliveOilEshop.Entities;
+using ModularCommerce.Abstractions;
+using ModularCommerce.Database;
+using ModularCommerce.Entities;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
-using OliveOilEshop.Features.AuthFeature.Login;
+using ModularCommerce.Features.AuthFeature.Login;
 
-namespace OliveOilEshop.Features.AuthFeature.LoginFeature;
+namespace ModularCommerce.Features.AuthFeature.LoginFeature;
 
 public sealed class LoginHandler(ApplicationDbContext dbContext, IConfiguration configuration) : IHandler<LoginRequest, Result<LoginResponse>>
 {
@@ -55,3 +55,4 @@ public sealed class LoginHandler(ApplicationDbContext dbContext, IConfiguration 
         return Result.Success(new LoginResponse { Token = tokenString });
     }
 }
+

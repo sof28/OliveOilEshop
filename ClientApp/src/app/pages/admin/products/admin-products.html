@@ -46,6 +46,14 @@
             <label>Image URL</label>
             <input type="text" [(ngModel)]="editingProduct.imageUrl" placeholder="https://..." />
           </div>
+          <div class="form-group">
+            <label>SKU</label>
+            <input type="text" [(ngModel)]="editingProduct.sku" placeholder="SKU-001" />
+          </div>
+          <div class="form-group">
+            <label>Stock Quantity</label>
+            <input type="number" [(ngModel)]="editingProduct.stockQuantity" placeholder="0" min="0" />
+          </div>
         </div>
         <div class="form-actions">
           <button class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
@@ -100,4 +108,3 @@
     }
   </main>
 </div>
-

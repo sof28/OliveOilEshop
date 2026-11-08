@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 
-namespace OliveOilEshop.Exceptions;
+namespace ModularCommerce.Exceptions;
 
 public class CustomExceptionHandler  : IExceptionHandler
 {

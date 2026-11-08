@@ -1,7 +1,7 @@
-using OliveOilEshop.Abstractions;
-using OliveOilEshop.Extensions;
+using ModularCommerce.Abstractions;
+using ModularCommerce.Extensions;
 
-namespace OliveOilEshop.Features.AuthFeature.Signup;
+namespace ModularCommerce.Features.AuthFeature.Signup;
 
 internal sealed class SignupEndpoint : IApiEndpoint
 {
@@ -20,4 +20,5 @@ internal sealed class SignupEndpoint : IApiEndpoint
         .Produces(statusCode: StatusCodes.Status400BadRequest);
     }
 }
+
 

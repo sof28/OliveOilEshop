@@ -1,4 +1,4 @@
-namespace OliveOilEshop.Entities;
+namespace ModularCommerce.Entities;
 
 public class OrderItem
 {
@@ -12,3 +12,4 @@ public class OrderItem
     public int Quantity { get; set; }
     public decimal UnitPrice { get; set; }
 }
+

@@ -1,7 +1,7 @@
-using OliveOilEshop.Abstractions;
-using OliveOilEshop.Extensions;
+using ModularCommerce.Abstractions;
+using ModularCommerce.Extensions;
 
-namespace OliveOilEshop.Features.AuthFeature.Login;
+namespace ModularCommerce.Features.AuthFeature.Login;
 
 internal sealed class LoginEndpoint : IApiEndpoint
 {
@@ -21,3 +21,4 @@ internal sealed class LoginEndpoint : IApiEndpoint
         
     }
 }
+

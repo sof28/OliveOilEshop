@@ -1,6 +1,6 @@
-﻿using OliveOilEshop.Abstractions;
+using ModularCommerce.Abstractions;
 
-namespace OliveOilEshop.Pipelines;
+namespace ModularCommerce.Pipelines;
 
 public sealed class AuthorizationDecorator<TRequest,TResponse>(
     IHttpContextAccessor httpContextAccessor,

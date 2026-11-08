@@ -1,7 +1,7 @@
-﻿using HealthChecks.UI.Client;
+using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
-namespace OliveOilEshop.Extensions
+namespace ModularCommerce.Extensions
 {
     public static class HealthChecksExtensions
     {
@@ -22,3 +22,4 @@ namespace OliveOilEshop.Extensions
         }
     }
 }
+

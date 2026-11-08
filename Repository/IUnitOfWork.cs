@@ -1,4 +1,4 @@
-namespace OliveOilEshop.Repository;
+namespace ModularCommerce.Repository;
 
 public interface IUnitOfWork
 {

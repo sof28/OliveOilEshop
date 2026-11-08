@@ -1,4 +1,5 @@
-﻿namespace OliveOilEshop.Features.ProductFeature.GetProducts;
+namespace ModularCommerce.Features.ProductFeature.GetProducts;
 
 public sealed record GetProductsQuery();
+
 

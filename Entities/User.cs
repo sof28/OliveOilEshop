@@ -1,6 +1,6 @@
-﻿using OliveOilEshop.Enums;
+using ModularCommerce.Enums;
 
-namespace OliveOilEshop.Entities
+namespace ModularCommerce.Entities
 {
     public class User
     {
@@ -22,3 +22,4 @@ namespace OliveOilEshop.Entities
         public ICollection<Order> Orders { get; set; } = [];
     }
 }
+

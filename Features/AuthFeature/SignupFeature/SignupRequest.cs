@@ -1,4 +1,4 @@
-﻿namespace OliveOilEshop.Features.AuthFeature.Signup;
+namespace ModularCommerce.Features.AuthFeature.Signup;
 
 public sealed class SignupRequest
 {
@@ -8,4 +8,5 @@ public sealed class SignupRequest
     public string Name { get; set; }
     public string Surname { get; set; }
 }
+
 

@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Authorization;
-using OliveOilEshop.Abstractions;
-using OliveOilEshop.Constants;
-using OliveOilEshop.Extensions;
+using ModularCommerce.Abstractions;
+using ModularCommerce.Constants;
+using ModularCommerce.Extensions;
 
-namespace OliveOilEshop.Features.OrderFeature.UpdateOrder;
+namespace ModularCommerce.Features.OrderFeature.UpdateOrder;
 
 internal sealed class UpdateOrderEndpoint : IApiEndpoint
 {
@@ -23,3 +23,4 @@ internal sealed class UpdateOrderEndpoint : IApiEndpoint
         .Produces(StatusCodes.Status400BadRequest);
     }
 }
+

@@ -1,8 +1,8 @@
-﻿using FluentValidation;
+using FluentValidation;
 using FluentValidation.Results;
-using OliveOilEshop.Abstractions;
-using OliveOilEshop.Abstractions.Errors;
-namespace OliveOilEshop.Pipelines;
+using ModularCommerce.Abstractions;
+using ModularCommerce.Abstractions.Errors;
+namespace ModularCommerce.Pipelines;
 
 public sealed class ValidationDecorator<TRequest, TResponse>(
     IEnumerable<IValidator<TRequest>> validators,
@@ -93,3 +93,4 @@ public sealed class ValidationDecorator<TRequest, TResponse>(
     private static ValidationError CreateValidationError(ValidationFailure[] validationFailures) =>
        new(validationFailures.Select(f => Error.Validation(f.ErrorCode, f.ErrorMessage)).ToArray());
 }
+

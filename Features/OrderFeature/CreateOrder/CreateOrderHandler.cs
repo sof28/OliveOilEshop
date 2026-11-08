@@ -1,9 +1,9 @@
-﻿using OliveOilEshop.Abstractions;
-using OliveOilEshop.Entities;
-using OliveOilEshop.Enums;
-using OliveOilEshop.Repository;
+using ModularCommerce.Abstractions;
+using ModularCommerce.Entities;
+using ModularCommerce.Enums;
+using ModularCommerce.Repository;
 
-namespace OliveOilEshop.Features.OrderFeature.CreateOrder
+namespace ModularCommerce.Features.OrderFeature.CreateOrder
 {
     public sealed class CreateOrderHandler(IRepository<Order> orderRepository, IUnitOfWork unitOfWork) : IHandler<CreateOrderRequest, Result<CreateOrderResponse>>
     {

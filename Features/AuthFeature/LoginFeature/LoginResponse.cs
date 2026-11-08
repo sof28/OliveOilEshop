@@ -1,4 +1,4 @@
-﻿namespace OliveOilEshop.Features.AuthFeature.Login;
+namespace ModularCommerce.Features.AuthFeature.Login;
 
 public sealed class LoginResponse
 {

@@ -1,8 +1,8 @@
-﻿using FluentValidation;
-using OliveOilEshop.Entities;
-using OliveOilEshop.Repository;
+using FluentValidation;
+using ModularCommerce.Entities;
+using ModularCommerce.Repository;
 
-namespace OliveOilEshop.Features.OrderFeature.UpdateOrder;
+namespace ModularCommerce.Features.OrderFeature.UpdateOrder;
 
 public class UpdateOrderValidator : AbstractValidator<UpdateOrderRequest>
 {
@@ -36,3 +36,4 @@ public class UpdateOrderValidator : AbstractValidator<UpdateOrderRequest>
            .WithMessage("User does not exist.");
     }
 }
+

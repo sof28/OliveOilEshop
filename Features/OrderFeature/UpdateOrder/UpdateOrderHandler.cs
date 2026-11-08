@@ -1,10 +1,10 @@
-﻿using OliveOilEshop.Abstractions;
-using OliveOilEshop.Abstractions.Errors;
-using OliveOilEshop.Entities;
-using OliveOilEshop.Repository;
+using ModularCommerce.Abstractions;
+using ModularCommerce.Abstractions.Errors;
+using ModularCommerce.Entities;
+using ModularCommerce.Repository;
 using System.Reflection.Metadata.Ecma335;
 
-namespace OliveOilEshop.Features.OrderFeature.UpdateOrder
+namespace ModularCommerce.Features.OrderFeature.UpdateOrder
 {
     public sealed class UpdateOrderHandler(IRepository<Order> orderRepository, IUnitOfWork unitOfWork) : IHandler<UpdateOrderRequest, Result<UpdateOrderResponse>>
     {

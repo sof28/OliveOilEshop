@@ -1,8 +1,8 @@
 using FluentValidation;
-using OliveOilEshop.Exceptions;
-using OliveOilEshop.Extensions;
-using OliveOilEshop.Features.OrderFeature.CreateOrder;
-using OliveOilEshop.Repository;
+using ModularCommerce.Exceptions;
+using ModularCommerce.Extensions;
+using ModularCommerce.Features.OrderFeature.CreateOrder;
+using ModularCommerce.Repository;
 using Scalar.AspNetCore;
 using System.Reflection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -99,3 +99,4 @@ app.UseAuthorization();
 await app.SeedProductsAsync();
 
 app.Run();
+

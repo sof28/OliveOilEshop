@@ -1,4 +1,4 @@
-﻿namespace OliveOilEshop.Features.ProductFeature;
+namespace ModularCommerce.Features.ProductFeature;
 
 public class AddProductValidator
 {

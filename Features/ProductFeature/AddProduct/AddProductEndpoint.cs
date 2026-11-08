@@ -1,8 +1,8 @@
-using OliveOilEshop.Abstractions;
-using OliveOilEshop.Constants;
-using OliveOilEshop.Extensions;
+using ModularCommerce.Abstractions;
+using ModularCommerce.Constants;
+using ModularCommerce.Extensions;
 
-namespace OliveOilEshop.Features.ProductFeature;
+namespace ModularCommerce.Features.ProductFeature;
 
 public class AddProductEndpoint : IApiEndpoint
 {
@@ -24,3 +24,4 @@ public class AddProductEndpoint : IApiEndpoint
         .Produces(StatusCodes.Status400BadRequest);
     }
 }
+

@@ -1,7 +1,7 @@
-﻿using Azure.Core;
-using OliveOilEshop.Abstractions;
+using Azure.Core;
+using ModularCommerce.Abstractions;
 
-namespace OliveOilEshop.Pipelines
+namespace ModularCommerce.Pipelines
 {
     public sealed class LoggingDecorator<TRequest, TResponse>(ILogger<LoggingDecorator<TRequest,TResponse>> logger, IHandler<TRequest,TResponse> handler) : IHandler<TRequest,TResponse>
     {
@@ -24,3 +24,4 @@ namespace OliveOilEshop.Pipelines
         }
     }
 }
+

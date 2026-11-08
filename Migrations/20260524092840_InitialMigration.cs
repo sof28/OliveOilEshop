@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace OliveOilEshop.Migrations
+namespace ModularCommerce.Migrations
 {
     /// <inheritdoc />
     public partial class InitialMigration : Migration
@@ -136,3 +136,4 @@ namespace OliveOilEshop.Migrations
         }
     }
 }
+

@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using OliveOilEshop.Database;
+using Microsoft.EntityFrameworkCore;
+using ModularCommerce.Database;
 
-namespace OliveOilEshop.Extensions
+namespace ModularCommerce.Extensions
 {
     public static class DatabaseExtension
     {
@@ -18,3 +18,4 @@ namespace OliveOilEshop.Extensions
         }
     }
 }
+

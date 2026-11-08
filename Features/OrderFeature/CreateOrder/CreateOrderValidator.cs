@@ -1,8 +1,8 @@
-﻿using FluentValidation;
-using OliveOilEshop.Entities;
-using OliveOilEshop.Repository;
+using FluentValidation;
+using ModularCommerce.Entities;
+using ModularCommerce.Repository;
 
-namespace OliveOilEshop.Features.OrderFeature.CreateOrder
+namespace ModularCommerce.Features.OrderFeature.CreateOrder
 {
     public class CreateOrderValidator : AbstractValidator<CreateOrderRequest>
     {
@@ -31,3 +31,4 @@ namespace OliveOilEshop.Features.OrderFeature.CreateOrder
         }
     }
 }
+

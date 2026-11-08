@@ -1,8 +1,8 @@
-﻿using OliveOilEshop.Abstractions;
-using OliveOilEshop.Entities;
-using OliveOilEshop.Repository;
+using ModularCommerce.Abstractions;
+using ModularCommerce.Entities;
+using ModularCommerce.Repository;
 
-namespace OliveOilEshop.Features.OrderFeature.DeleteOrder
+namespace ModularCommerce.Features.OrderFeature.DeleteOrder
 {
     public class DeleteOrderHandler(IRepository<Order> orderRepository, IUnitOfWork unitOfWork) : IHandler<DeleteOrderRequest, Result<DeleteOrderResponse>>
     {
@@ -20,3 +20,4 @@ namespace OliveOilEshop.Features.OrderFeature.DeleteOrder
         }
     }
 }
+

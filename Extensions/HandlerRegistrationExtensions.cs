@@ -1,8 +1,8 @@
-﻿using OliveOilEshop.Abstractions;
-using OliveOilEshop.Pipelines;
+using ModularCommerce.Abstractions;
+using ModularCommerce.Pipelines;
 using System.Reflection;
 
-namespace OliveOilEshop.Extensions
+namespace ModularCommerce.Extensions
 {
     public static class HandlerRegistrationExtensions
     {
@@ -28,3 +28,4 @@ namespace OliveOilEshop.Extensions
         }
     }
 }
+

@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using OliveOilEshop.Abstractions;
-using OliveOilEshop.Constants;
-using OliveOilEshop.Extensions;
+using ModularCommerce.Abstractions;
+using ModularCommerce.Constants;
+using ModularCommerce.Extensions;
 
-namespace OliveOilEshop.Features.OrderFeature.DeleteOrder
+namespace ModularCommerce.Features.OrderFeature.DeleteOrder
 {
     public class DeleteOrderEndpoint : IApiEndpoint
     {
@@ -24,3 +24,4 @@ namespace OliveOilEshop.Features.OrderFeature.DeleteOrder
         }
     }
 }
+

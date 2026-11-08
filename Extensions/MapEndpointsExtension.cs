@@ -1,8 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection.Extensions;
-using OliveOilEshop.Abstractions;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using ModularCommerce.Abstractions;
 using System.Reflection;
 
-namespace OliveOilEshop.Extensions
+namespace ModularCommerce.Extensions
 {
     public static class MapEndpointsExtension
     {
@@ -33,3 +33,4 @@ namespace OliveOilEshop.Extensions
         }
     }
 }
+

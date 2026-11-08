@@ -1,6 +1,6 @@
-﻿using FluentValidation;
+using FluentValidation;
 
-namespace OliveOilEshop.Features.OrderFeature.DeleteOrder
+namespace ModularCommerce.Features.OrderFeature.DeleteOrder
 {
     public class DeleteOrderValidator : AbstractValidator<DeleteOrderRequest>
     {
@@ -11,3 +11,4 @@ namespace OliveOilEshop.Features.OrderFeature.DeleteOrder
         }
     }
 }
+

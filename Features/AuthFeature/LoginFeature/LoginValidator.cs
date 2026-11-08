@@ -1,6 +1,6 @@
-﻿using FluentValidation;
+using FluentValidation;
 
-namespace OliveOilEshop.Features.AuthFeature.Login;
+namespace ModularCommerce.Features.AuthFeature.Login;
 
 public class LoginValidator : AbstractValidator<LoginRequest>
 {

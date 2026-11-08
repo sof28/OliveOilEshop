@@ -1,7 +1,7 @@
-﻿using OliveOilEshop.Abstractions;
-using OliveOilEshop.Abstractions.Errors;
+using ModularCommerce.Abstractions;
+using ModularCommerce.Abstractions.Errors;
 
-namespace OliveOilEshop.Extensions;
+namespace ModularCommerce.Extensions;
 
 public static class ResultExtensions
 {
@@ -26,4 +26,5 @@ public static class ResultExtensions
             : onFailure(result.Error);
     }
 }
+
 

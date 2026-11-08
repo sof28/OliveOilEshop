@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore.Query;
 
-namespace OliveOilEshop.Repository;
+namespace ModularCommerce.Repository;
 
 public interface IRepository<T>  where T : class
 {

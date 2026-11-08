@@ -1,4 +1,5 @@
-﻿namespace OliveOilEshop.Features.OrderFeature.DeleteOrder
+namespace ModularCommerce.Features.OrderFeature.DeleteOrder
 {
     public sealed record DeleteOrderRequest(int Id);
 }
+

@@ -43,7 +43,17 @@ export class AdminProductsComponent implements OnInit {
   }
 
   openNew(): void {
-    this.editingProduct = { name: '', description: '', price: 0, imageUrl: '' };
+    this.editingProduct = {
+      name: '',
+      slug: '',
+      description: '',
+      price: 0,
+      imageUrl: '',
+      sku: '',
+      stockQuantity: 0,
+      categoryId: null,
+      productTypeId: null,
+    };
     this.isNew = true;
     this.error = null;
   }
@@ -102,4 +112,3 @@ export class AdminProductsComponent implements OnInit {
     setTimeout(() => (this.successMessage = null), 3000);
   }
 }
-

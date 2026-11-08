@@ -1,4 +1,4 @@
-namespace OliveOilEshop.Constants;
+namespace ModularCommerce.Constants;
 
 public static class ApiTags
 {

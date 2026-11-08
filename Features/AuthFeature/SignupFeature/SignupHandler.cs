@@ -1,15 +1,15 @@
-﻿using OliveOilEshop.Abstractions;
-using OliveOilEshop.Database;
-using OliveOilEshop.Entities;
+using ModularCommerce.Abstractions;
+using ModularCommerce.Database;
+using ModularCommerce.Entities;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
-using OliveOilEshop.Features.AuthFeature.Signup;
+using ModularCommerce.Features.AuthFeature.Signup;
 
-namespace OliveOilEshop.Features.AuthFeature.SignupFeature;
+namespace ModularCommerce.Features.AuthFeature.SignupFeature;
 
 public sealed class SignupHandler(ApplicationDbContext dbContext, IConfiguration configuration) : IHandler<SignupRequest, Result<SignupResponse>>
 {
@@ -63,5 +63,6 @@ public sealed class SignupHandler(ApplicationDbContext dbContext, IConfiguration
         return Result.Success(new SignupResponse { Token = tokenString });
     }
 }
+
 
 

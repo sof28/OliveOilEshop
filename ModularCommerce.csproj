@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Folder Include="Docker\" />
       <Folder Include="Features\ProductFeature\DeleteProduct\" />
       <Folder Include="Features\ProductFeature\UpdateProduct.cs\" />
       <Folder Include="Migrations\" />

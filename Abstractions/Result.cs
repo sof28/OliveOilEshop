@@ -1,6 +1,6 @@
-﻿using OliveOilEshop.Abstractions.Errors;
+using ModularCommerce.Abstractions.Errors;
 
-namespace OliveOilEshop.Abstractions
+namespace ModularCommerce.Abstractions
 {
     public class Result
     {
@@ -62,11 +62,12 @@ namespace OliveOilEshop.Abstractions
             ? _value!
             : throw new InvalidOperationException("The value of a failure result can not be accessed.");
 
-        // ✅ SUCCESS implicit conversion
+        // ? SUCCESS implicit conversion
         public static implicit operator Result<TValue>(TValue? value) => Create(value);
 
-        // ✅ ADD THIS (Failure implicit conversion)
+        // ? ADD THIS (Failure implicit conversion)
         public static implicit operator Result<TValue>(Error error)
             => Failure<TValue>(error);
     }
 }
+

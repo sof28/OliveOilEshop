@@ -1,6 +1,6 @@
-using OliveOilEshop.Database;
+using ModularCommerce.Database;
 
-namespace OliveOilEshop.Repository;
+namespace ModularCommerce.Repository;
 
 public class UnitOfWork(ApplicationDbContext dbContext) : IUnitOfWork
 {

@@ -1,4 +1,4 @@
-﻿namespace OliveOilEshop.Pipelines;
+namespace ModularCommerce.Pipelines;
 
 public interface IUserScopeRequest
 {

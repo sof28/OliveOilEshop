@@ -1,8 +1,8 @@
-using OliveOilEshop.Abstractions;
-using OliveOilEshop.Constants;
-using OliveOilEshop.Extensions;
+using ModularCommerce.Abstractions;
+using ModularCommerce.Constants;
+using ModularCommerce.Extensions;
 
-namespace OliveOilEshop.Features.ProductFeature.GetProducts;
+namespace ModularCommerce.Features.ProductFeature.GetProducts;
 
 internal sealed class GetProductsEndpoint : IApiEndpoint
 {
@@ -23,4 +23,5 @@ internal sealed class GetProductsEndpoint : IApiEndpoint
         .AllowAnonymous();
     }
 }
+
 

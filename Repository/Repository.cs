@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
-using OliveOilEshop.Database;
+using ModularCommerce.Database;
 
-namespace OliveOilEshop.Repository;
+namespace ModularCommerce.Repository;
 
 public class Repository<T>(ApplicationDbContext dbContext) : IRepository<T>
     where T : class

@@ -1,4 +1,4 @@
-﻿namespace OliveOilEshop.Enums
+namespace ModularCommerce.Enums
 {
     public enum UserRole : short
     {
@@ -7,3 +7,4 @@
         User = 2,
     }
 }
+
