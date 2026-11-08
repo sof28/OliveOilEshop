@@ -1,5 +1,6 @@
-﻿export const environment = {
+export const environment = {
   production: false,
-  apiUrl: '/api'
+  apiUrl: '/api',
+  siteId: 'sofianos'
 };
 

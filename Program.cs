@@ -96,7 +96,7 @@ app.UseExceptionHandler();
 app.UseAuthentication();
 app.UseAuthorization();
 
-await app.SeedProductsAsync();
+//await app.SeedProductsAsync();
 
 app.Run();
 

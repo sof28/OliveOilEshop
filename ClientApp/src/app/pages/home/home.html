@@ -1,54 +1,97 @@
-﻿<!-- Hero Section -->
+<!-- Hero -->
 <section class="hero">
   <div class="hero-content">
-    <span class="hero-badge">🫒 Premium Greek Olive Oil</span>
-    <h1>From Our Groves <br /> To Your Table</h1>
-    <p>
-      Authentic extra-virgin olive oil, cold-pressed from hand-picked olives in the heart of
-      Greece. Pure, natural, and full of flavor.
-    </p>
+    <span class="hero-badge">{{ site.t(site.config.hero.badge) }}</span>
+    <h1>{{ site.t(site.config.hero.title) }}</h1>
+    <p>{{ site.t(site.config.hero.subtitle) }}</p>
     <div class="hero-actions">
-      <a routerLink="/products" class="btn btn-primary">Shop Now</a>
-      <a routerLink="/about" class="btn btn-secondary">Our Story</a>
+      <a [routerLink]="site.config.hero.primaryCta.route" class="btn btn-primary">{{
+        site.t(site.config.hero.primaryCta.label)
+      }}</a>
+      <a [routerLink]="site.config.hero.secondaryCta.route" class="btn btn-secondary">{{
+        site.t(site.config.hero.secondaryCta.label)
+      }}</a>
     </div>
   </div>
-  <div class="hero-graphic">🫒</div>
+  <div class="hero-graphic">
+    <img [src]="site.config.hero.image" [alt]="site.t(site.config.brand.name)" (error)="$any($event.target).style.display = 'none'" />
+    <span class="hero-fallback">{{ site.config.brand.icon }}</span>
+  </div>
 </section>
 
-<!-- Features Section -->
+<!-- Story -->
+<section class="story">
+  <div class="container story-grid">
+    <img class="story-image" [src]="site.config.story.image" [alt]="site.t(site.config.story.title)" (error)="$any($event.target).style.display = 'none'" />
+    <div>
+      <h3>{{ site.t(site.config.story.subtitle) }}</h3>
+      <h2>{{ site.t(site.config.story.title) }}</h2>
+      <p>{{ site.t(site.config.story.body) }}</p>
+      <a [routerLink]="site.config.story.cta.route" class="btn btn-secondary">{{
+        site.t(site.config.story.cta.label)
+      }}</a>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
 <section class="features">
   <div class="container">
     <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">🌿</div>
-        <h3>100% Organic</h3>
-        <p>No pesticides, no GMOs. Just pure, natural olives grown the traditional way.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">❄️</div>
-        <h3>Cold Pressed</h3>
-        <p>Our olives are pressed at low temperatures to preserve all nutrients and flavors.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🚚</div>
-        <h3>Fast Delivery</h3>
-        <p>Fresh from the grove to your door. Orders shipped within 48 hours.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🏆</div>
-        <h3>Award Winning</h3>
-        <p>Multiple international quality awards for taste, aroma, and purity.</p>
-      </div>
+      @for (f of site.config.features; track f.icon) {
+        <div class="feature-card">
+          <div class="feature-icon">{{ f.icon }}</div>
+          <h3>{{ site.t(f.title) }}</h3>
+          <p>{{ site.t(f.text) }}</p>
+        </div>
+      }
     </div>
   </div>
 </section>
 
-<!-- CTA Section -->
-<section class="cta-section">
-  <div class="container cta-content">
-    <h2>Taste the Difference</h2>
-    <p>Browse our selection of premium olive oils sourced from the finest Greek groves.</p>
-    <a routerLink="/products" class="btn btn-primary btn-large">Explore Products</a>
+<!-- Featured products -->
+<section class="featured">
+  <div class="container">
+    <h2>{{ site.t(site.config.featuredProducts.title) }}</h2>
+    <p class="section-subtitle">{{ site.t(site.config.featuredProducts.subtitle) }}</p>
+    <div class="featured-grid">
+      @for (p of featured(); track p.id) {
+        <app-product-card [product]="p" (addToCart)="onAddToCart($event)" />
+      }
+    </div>
+    <div class="featured-cta">
+      <a [routerLink]="site.config.featuredProducts.cta.route" class="btn btn-primary">{{
+        site.t(site.config.featuredProducts.cta.label)
+      }}</a>
+    </div>
   </div>
 </section>
 
+<!-- Blog teaser -->
+@if (site.config.flags.blog && site.config.blogTeaser.posts.length > 0) {
+  <section class="blog-teaser">
+    <div class="container">
+      <h2>{{ site.t(site.config.blogTeaser.title) }}</h2>
+      <div class="blog-grid">
+        @for (post of site.config.blogTeaser.posts; track post.route) {
+          <a [routerLink]="post.route" class="blog-card">
+            <img [src]="post.image" [alt]="site.t(post.title)" />
+            <h3>{{ site.t(post.title) }}</h3>
+            <span>{{ site.t(site.config.blogTeaser.readMore) }}</span>
+          </a>
+        }
+      </div>
+    </div>
+  </section>
+}
+
+<!-- Contact CTA -->
+@if (site.config.flags.contactForm) {
+  <section class="cta-section">
+    <div class="container cta-content">
+      <h2>{{ site.t(site.config.contactSection.title) }}</h2>
+      <p>{{ site.t(site.config.contactSection.text) }}</p>
+      {{ site.label('contact') }}
+    </div>
+  </section>
+}

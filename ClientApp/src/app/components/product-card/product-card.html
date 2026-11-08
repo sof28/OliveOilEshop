@@ -1,18 +1,22 @@
-﻿<div class="product-card">
-  <div class="product-image">
+<div class="product-card">
+  <a class="product-image" [routerLink]="['/products', product.slug || product.id]">
     @if (product.imageUrl) {
       <img [src]="product.imageUrl" [alt]="product.name" />
     } @else {
-      <div class="placeholder-image">🫒</div>
+      <div class="placeholder-image">{{ site.config.brand.icon }}</div>
     }
-  </div>
+  </a>
   <div class="product-body">
-    <h3 class="product-name">{{ product.name }}</h3>
+    @if (product.categoryName) {
+      <p class="product-category">{{ product.categoryName }}</p>
+    }
+    <h3 class="product-name">
+      <a [routerLink]="['/products', product.slug || product.id]">{{ product.name }}</a>
+    </h3>
     <p class="product-description">{{ product.description }}</p>
     <div class="product-footer">
       <span class="product-price">{{ product.price | currency: 'EUR' }}</span>
-      <button class="btn-add-to-cart" (click)="onAddToCart()">Add to Cart</button>
+      <button class="btn-add-to-cart" (click)="onAddToCart()">{{ site.label('addToCart') }}</button>
     </div>
   </div>
 </div>
-

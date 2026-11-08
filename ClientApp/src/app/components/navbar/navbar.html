@@ -1,15 +1,37 @@
 <nav class="navbar">
   <div class="navbar-container">
     <a routerLink="/" class="navbar-brand">
-      <span class="brand-icon">??</span>
-      <span class="brand-name">ModularCommerce</span>
+      <span class="brand-icon">{{ site.config.brand.icon }}</span>
+      <span class="brand-name">{{ site.t(site.config.brand.name) }}</span>
     </a>
     <div class="navbar-links">
-      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-      <a routerLink="/products" routerLinkActive="active">Shop</a>
-      <a routerLink="/about" routerLinkActive="active">About</a>
-      <a routerLink="/cart" class="cart-link" routerLinkActive="active">
-        <span class="cart-icon">??</span>
+      @for (item of site.config.nav; track item.route) {
+        <a
+          [routerLink]="item.route"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: item.route === '/' }"
+          >{{ site.t(item.label) }}</a
+        >
+      }
+      @if (site.config.languages.length > 1) {
+        <span class="lang-switch">
+          @for (l of site.config.languages; track l) {
+            <button
+              type="button"
+              class="lang-btn"
+              [class.active]="site.lang() === l"
+              (click)="site.setLang(l)"
+            >
+              {{ l.toUpperCase() }}
+            </button>
+          }
+        </span>
+      }
+      @if (site.config.flags.wishlist) {
+        <a routerLink="/wishlist" routerLinkActive="active" [attr.title]="site.label('wishlist')">♡</a>
+      }
+      <a routerLink="/cart" class="cart-link" routerLinkActive="active" [attr.title]="site.label('cart')">
+        <span class="cart-icon">🛒</span>
         @if ((cartService.itemCount$ | async) ?? 0; as count) {
           @if (count > 0) {
             <span class="cart-badge">{{ count }}</span>
@@ -17,15 +39,15 @@
         }
       </a>
       @if (authService.isAdmin()) {
-        <a routerLink="/admin" routerLinkActive="active" class="admin-link">?? Admin</a>
+        <a routerLink="/admin" routerLinkActive="active" class="admin-link">{{ site.label('admin') }}</a>
       }
-      @if (authService.isLoggedIn()) {
-        <button class="btn-logout" (click)="logout()">Sign Out</button>
-      } @else {
-        <a routerLink="/login" routerLinkActive="active" class="login-link">Sign In</a>
+      @if (site.config.flags.accounts) {
+        @if (authService.isLoggedIn()) {
+          <button class="btn-logout" (click)="logout()">{{ site.label('logout') }}</button>
+        } @else {
+          <a routerLink="/login" routerLinkActive="active" class="login-link">{{ site.label('login') }}</a>
+        }
       }
     </div>
   </div>
 </nav>
-
-

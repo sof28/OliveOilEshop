@@ -1,0 +1,158 @@
+{
+  "siteId": "sofianos",
+  "defaultLang": "el",
+  "languages": ["el", "en"],
+  "brand": {
+    "name": { "el": "Κτήμα Σοφιανός", "en": "Sofianos Estate" },
+    "tagline": {
+      "el": "Παρθένο ελαιόλαδο από την Αχαΐα",
+      "en": "Virgin olive oil from Achaia"
+    },
+    "logo": "/sites/sofianos/logo.svg",
+    "icon": "🫒"
+  },
+  "theme": {
+    "primary": "#3d5a2a",
+    "primaryDark": "#2d4320",
+    "accent": "#c8860a",
+    "background": "#f9f9f2",
+    "surface": "#ffffff",
+    "surfaceAlt": "#e8f0d8",
+    "text": "#333333",
+    "muted": "#666666"
+  },
+  "contact": {
+    "phone": "+30 695 572 3802",
+    "email": "info@sofianosoliveoil.gr",
+    "address": { "el": "Αχαΐα, Ελλάδα", "en": "Achaia, Greece" }
+  },
+  "promoBar": {
+    "enabled": true,
+    "message": {
+      "el": "Δωρεάν μεταφορικά για παραγγελίες άνω των 30€ εντός Ελλάδος με τον κωδικό",
+      "en": "Free shipping on orders over €30 within Greece with code"
+    },
+    "code": "FREESHIP30"
+  },
+  "nav": [
+    { "label": { "el": "Αρχική", "en": "Home" }, "route": "/" },
+    { "label": { "el": "Η ιστορία μας", "en": "Our story" }, "route": "/about" },
+    { "label": { "el": "Προϊόντα", "en": "Products" }, "route": "/products" },
+    { "label": { "el": "Blog", "en": "Blog" }, "route": "/blog" },
+    { "label": { "el": "Επικοινωνία", "en": "Contact" }, "route": "/contact" }
+  ],
+  "hero": {
+    "badge": { "el": "Εξαιρετικό παρθένο ελαιόλαδο", "en": "Extra virgin olive oil" },
+    "title": {
+      "el": "Από τη γη της Αχαΐας στο τραπέζι σας",
+      "en": "From the land of Achaia to your table"
+    },
+    "subtitle": {
+      "el": "Ελαιόλαδο από την ποικιλία Κορωνέικη, με φρουτώδες άρωμα και ισορροπημένη έντασή.",
+      "en": "Koroneiki olive oil with a fruity aroma and balanced intensity."
+    },
+    "image": "/sites/sofianos/hero.webp",
+    "primaryCta": { "label": { "el": "Αγορά τώρα", "en": "Shop now" }, "route": "/products" },
+    "secondaryCta": { "label": { "el": "Η ιστορία μας", "en": "Our story" }, "route": "/about" }
+  },
+  "story": {
+    "title": { "el": "Από γενιά σε γενιά", "en": "From generation to generation" },
+    "subtitle": { "el": "Η ιστορία του κτήματος", "en": "The story of the estate" },
+    "body": {
+      "el": "Τέσσερις γενιές καλλιεργούν την ελιά με σεβασμό, συνέπεια και αγάπη.",
+      "en": "Four generations have cultivated the olive tree with respect, consistency and love."
+    },
+    "image": "/sites/sofianos/story.webp",
+    "cta": { "label": { "el": "Η ιστορία μας", "en": "Our story" }, "route": "/about" }
+  },
+  "features": [
+    {
+      "icon": "🌿",
+      "title": { "el": "Φυσικό", "en": "Natural" },
+      "text": { "el": "Καλλιέργεια με σεβασμό στη φύση.", "en": "Grown with respect for nature." }
+    },
+    {
+      "icon": "❄️",
+      "title": { "el": "Ψυχρή έκθλιψη", "en": "Cold pressed" },
+      "text": { "el": "Διατηρεί θρεπτικά συστατικά και άρωμα.", "en": "Preserves nutrients and aroma." }
+    },
+    {
+      "icon": "🚚",
+      "title": { "el": "Γρήγορη παράδοση", "en": "Fast delivery" },
+      "text": { "el": "Αποστολή από το κτήμα στο σπίτι σας.", "en": "Shipped from the estate to your home." }
+    }
+  ],
+  "featuredProducts": {
+    "title": { "el": "Η συλλογή μας", "en": "Our collection" },
+    "subtitle": {
+      "el": "Γνωρίστε τις επιλογές μας και βρείτε αυτή που ταιριάζει σε εσάς.",
+      "en": "Discover our options and find the one that suits you."
+    },
+    "count": 3,
+    "cta": { "label": { "el": "Όλα τα προϊόντα", "en": "All products" }, "route": "/products" }
+  },
+  "blogTeaser": {
+    "title": { "el": "Blog", "en": "Blog" },
+    "readMore": { "el": "Διαβάστε περισσότερα »", "en": "Read more »" },
+    "posts": []
+  },
+  "contactSection": {
+    "title": { "el": "Επικοινωνήστε μαζί μας", "en": "Get in touch" },
+    "text": {
+      "el": "Συμπληρώστε τη φόρμα και θα σας απαντήσουμε το συντομότερο δυνατόν.",
+      "en": "Fill in the form and we will reply as soon as possible."
+    }
+  },
+  "footer": {
+    "text": { "el": "Με επιφύλαξη παντός δικαιώματος.", "en": "All rights reserved." }
+  },
+  "labels": {
+    "login": { "el": "Σύνδεση", "en": "Sign in" },
+    "logout": { "el": "Αποσύνδεση", "en": "Sign out" },
+    "admin": { "el": "Διαχείριση", "en": "Admin" },
+    "wishlist": { "el": "Αγαπημένα", "en": "Wishlist" },
+    "cart": { "el": "Καλάθι", "en": "Cart" },
+    "contact": { "el": "Επικοινωνία", "en": "Contact us" },
+    "shopTitle": { "el": "Τα προϊόντα μας", "en": "Our products" },
+    "shopSubtitle": {
+      "el": "Ανακαλύψτε τη συλλογή μας, απευθείας από το κτήμα.",
+      "en": "Discover our collection, straight from the estate."
+    },
+    "addToCart": { "el": "Προσθήκη στο καλάθι", "en": "Add to cart" },
+    "addedToCart": { "el": "Προστέθηκε στο καλάθι!", "en": "Added to cart!" },
+    "loading": { "el": "Φόρτωση προϊόντων...", "en": "Loading products..." },
+    "loadError": { "el": "Αποτυχία φόρτωσης προϊόντων.", "en": "Failed to load products." },
+    "empty": { "el": "Δεν υπάρχουν προϊόντα ακόμα.", "en": "No products available yet." },
+    "allCategories": { "el": "Όλα", "en": "All" },
+    "backToShop": { "el": "« Πίσω στα προϊόντα", "en": "« Back to products" },
+    "notFound": { "el": "Το προϊόν δεν βρέθηκε.", "en": "Product not found." },
+    "outOfStock": { "el": "Μη διαθέσιμο", "en": "Out of stock" },
+    "sku": { "el": "Κωδικός", "en": "SKU" },
+    "cartTitle": { "el": "Το καλάθι σας", "en": "Your cart" },
+    "cartEmpty": { "el": "Το καλάθι σας είναι άδειο", "en": "Your cart is empty" },
+    "cartEmptyText": { "el": "Προσθέστε προϊόντα για να ξεκινήσετε!", "en": "Add some products to get started!" },
+    "browseProducts": { "el": "Δείτε τα προϊόντα", "en": "Browse products" },
+    "each": { "el": "το τεμάχιο", "en": "each" },
+    "total": { "el": "Σύνολο", "en": "Total" },
+    "remove": { "el": "Αφαίρεση", "en": "Remove" },
+    "placeOrderTitle": { "el": "Ολοκλήρωση παραγγελίας", "en": "Place your order" },
+    "fullName": { "el": "Ονοματεπώνυμο", "en": "Full name" },
+    "emailAddress": { "el": "Διεύθυνση email", "en": "Email address" },
+    "deliveryAddress": { "el": "Διεύθυνση παράδοσης", "en": "Delivery address" },
+    "placeOrder": { "el": "Παραγγελία", "en": "Place order" },
+    "placingOrder": { "el": "Αποστολή παραγγελίας...", "en": "Placing order..." },
+    "orderSuccess": { "el": "Η παραγγελία καταχωρήθηκε!", "en": "Order placed successfully!" },
+    "orderSuccessText": {
+      "el": "Ευχαριστούμε για την αγορά σας.",
+      "en": "Thank you for your purchase."
+    },
+    "continueShopping": { "el": "Συνέχεια αγορών", "en": "Continue shopping" },
+    "orderError": { "el": "Αποτυχία παραγγελίας. Δοκιμάστε ξανά.", "en": "Failed to place order. Please try again." }
+  },
+  "flags": {
+    "wishlist": true,
+    "blog": true,
+    "accounts": true,
+    "contactForm": true
+  }
+}

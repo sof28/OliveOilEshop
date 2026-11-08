@@ -1,7 +1,7 @@
-﻿<section class="products-hero">
+<section class="products-hero">
   <div class="container">
-    <h1>Our Products</h1>
-    <p>Discover our range of premium Greek olive oils, straight from the grove.</p>
+    <h1>{{ site.label('shopTitle') }}</h1>
+    <p>{{ site.label('shopSubtitle') }}</p>
   </div>
 </section>
 
@@ -10,29 +10,40 @@
     @if (loading()) {
       <div class="loading-state">
         <div class="spinner"></div>
-        <p>Loading our finest oils...</p>
+        <p>{{ site.label('loading') }}</p>
       </div>
     } @else if (error()) {
       <div class="error-state">
         <span>⚠️</span>
-        <p>{{ error() }}</p>
+        <p>{{ site.label('loadError') }}</p>
       </div>
     } @else if (products().length === 0) {
       <div class="empty-state">
-        <span>🫒</span>
-        <p>No products available yet. Check back soon!</p>
+        <span>{{ site.config.brand.icon }}</span>
+        <p>{{ site.label('empty') }}</p>
       </div>
     } @else {
+      @if (categories().length > 0) {
+        <div class="category-filter">
+          <button type="button" [class.active]="selectedCategory() === null" (click)="selectedCategory.set(null)">
+            {{ site.label('allCategories') }}
+          </button>
+          @for (c of categories(); track c) {
+            <button type="button" [class.active]="selectedCategory() === c" (click)="selectedCategory.set(c)">
+              {{ c }}
+            </button>
+          }
+        </div>
+      }
       <div class="products-grid">
-        @for (product of products(); track product.id) {
+        @for (product of filtered(); track product.id) {
           <app-product-card [product]="product" (addToCart)="onAddToCart($event)" />
         }
       </div>
     }
 
     @if (addedToCartId() !== null) {
-      <div class="toast">✅ Added to cart!</div>
+      <div class="toast">✅ {{ site.label('addedToCart') }}</div>
     }
   </div>
 </section>
-

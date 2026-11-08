@@ -1,5 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
+:root {
+  --color-primary: #3d5a2a;
+  --color-primary-dark: #2d4320;
+  --color-accent: #c8860a;
+  --color-background: #f9f9f2;
+  --color-surface: #ffffff;
+  --color-surface-alt: #e8f0d8;
+  --color-text: #333333;
+  --color-muted: #666666;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -9,8 +20,8 @@ html, body {
   padding: 0;
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   font-size: 16px;
-  background: #f9f9f2;
-  color: #333;
+  background: var(--color-background);
+  color: var(--color-text);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -39,16 +50,16 @@ html, body {
 }
 
 .btn-primary {
-  background: #3d5a2a;
+  background: var(--color-primary);
   color: #fff;
-  &:hover { background: #2d4320; }
+  &:hover { background: var(--color-primary-dark); }
 }
 
 .btn-secondary {
-  background: #fff;
-  color: #3d5a2a;
-  border: 2px solid #3d5a2a;
-  &:hover { background: #f0f8e8; }
+  background: var(--color-surface);
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  &:hover { background: var(--color-surface-alt); }
 }
 
 .btn-large {

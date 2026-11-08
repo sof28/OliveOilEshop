@@ -14,6 +14,10 @@ public class ApplicationDbContext(DbContextOptions options) : DbContext(options)
     public DbSet<ProductVariant> ProductVariants { get; set; }
     public DbSet<ProductAttributeValue> ProductAttributeValues { get; set; }
     public DbSet<User> Users { get; set; }
+    public DbSet<BlogPost> BlogPosts { get; set; }
+    public DbSet<ContactMessage> ContactMessages { get; set; }
+    public DbSet<Coupon> Coupons { get; set; }
+    public DbSet<WishlistItem> WishlistItems { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -68,5 +72,37 @@ public class ApplicationDbContext(DbContextOptions options) : DbContext(options)
             .WithMany(pc => pc.ChildCategories)
             .HasForeignKey(pc => pc.ParentCategoryId)
             .OnDelete(DeleteBehavior.Restrict);
+
+        modelBuilder.Entity<BlogPost>()
+            .HasIndex(b => new { b.Slug, b.Language })
+            .IsUnique();
+
+        modelBuilder.Entity<WishlistItem>()
+            .HasIndex(w => new { w.UserId, w.ProductId })
+            .IsUnique();
+
+        modelBuilder.Entity<WishlistItem>()
+            .HasOne(w => w.User)
+            .WithMany()
+            .HasForeignKey(w => w.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        modelBuilder.Entity<WishlistItem>()
+            .HasOne(w => w.Product)
+            .WithMany()
+            .HasForeignKey(w => w.ProductId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        modelBuilder.Entity<Coupon>()
+            .HasIndex(c => c.Code)
+            .IsUnique();
+
+        modelBuilder.Entity<Coupon>()
+            .Property(c => c.DiscountPercent)
+            .HasPrecision(5, 2);
+
+        modelBuilder.Entity<Coupon>()
+            .Property(c => c.MinOrderAmount)
+            .HasPrecision(18, 2);
     }
 }

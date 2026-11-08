@@ -1,0 +1,16 @@
+@if (site.config.promoBar.enabled) {
+  <div class="promo-bar">
+    <div class="promo-container">
+      <span class="promo-message">
+        {{ site.t(site.config.promoBar.message) }}
+        @if (site.config.promoBar.code) {
+          <strong>{{ site.config.promoBar.code }}</strong>
+        }
+      </span>
+      <span class="promo-contact">
+        <a [href]="'tel:' + site.config.contact.phone">{{ site.config.contact.phone }}</a>
+        <a [href]="'mailto:' + site.config.contact.email">{{ site.config.contact.email }}</a>
+      </span>
+    </div>
+  </div>
+}

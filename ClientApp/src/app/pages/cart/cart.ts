@@ -1,10 +1,11 @@
-﻿import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AsyncPipe, CurrencyPipe } from '@angular/common';
 import { CartService } from '../../services/cart.service';
 import { OrderService } from '../../services/order.service';
 import { CartItem } from '../../models/cart-item.model';
+import { SiteConfigService } from '../../config/site-config.service';
 
 @Component({
   selector: 'app-cart',
@@ -14,11 +15,12 @@ import { CartItem } from '../../models/cart-item.model';
   styleUrl: './cart.scss',
 })
 export class CartComponent {
+  readonly site = inject(SiteConfigService);
   customerName = '';
   customerEmail = '';
   customerAddress = '';
   orderSuccess = false;
-  orderError: string | null = null;
+  orderFailed = false;
   submitting = false;
 
   constructor(
@@ -39,7 +41,7 @@ export class CartComponent {
     if (items.length === 0) return;
 
     this.submitting = true;
-    this.orderError = null;
+    this.orderFailed = false;
 
     const payload = {
       price: this.cartService.getTotal(),
@@ -61,7 +63,7 @@ export class CartComponent {
         this.submitting = false;
       },
       error: () => {
-        this.orderError = 'Failed to place order. Please try again.';
+        this.orderFailed = true;
         this.submitting = false;
       },
     });

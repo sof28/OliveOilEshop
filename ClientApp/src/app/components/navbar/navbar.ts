@@ -1,8 +1,9 @@
-﻿import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AsyncPipe } from '@angular/common';
 import { CartService } from '../../services/cart.service';
 import { AuthService } from '../../services/auth.service';
+import { SiteConfigService } from '../../config/site-config.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,13 +13,11 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './navbar.scss',
 })
 export class NavbarComponent {
-  constructor(
-    public cartService: CartService,
-    public authService: AuthService,
-  ) {}
+  readonly cartService = inject(CartService);
+  readonly authService = inject(AuthService);
+  readonly site = inject(SiteConfigService);
 
   logout(): void {
     this.authService.logout();
   }
 }
-

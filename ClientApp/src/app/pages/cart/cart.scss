@@ -1,12 +1,12 @@
-﻿.cart-page {
+.cart-page {
   min-height: calc(100vh - 72px);
-  background: #f9f9f2;
+  background: var(--color-background);
   padding: 3rem 2rem;
 
   h1 {
     font-size: 2rem;
     font-weight: 800;
-    color: #2d3a1a;
+    color: var(--color-primary-dark);
     margin: 0 0 2rem;
   }
 }
@@ -19,7 +19,7 @@
 }
 
 .cart-items {
-  background: #fff;
+  background: var(--color-surface);
   border-radius: 16px;
   padding: 1.5rem;
   box-shadow: 0 2px 12px rgba(0,0,0,0.06);
@@ -42,8 +42,8 @@
 
 .item-details {
   flex: 1;
-  h4 { margin: 0 0 0.25rem; font-size: 0.95rem; color: #2d3a1a; }
-  .item-price { font-size: 0.8rem; color: #888; }
+  h4 { margin: 0 0 0.25rem; font-size: 0.95rem; color: var(--color-primary-dark); }
+  .item-price { font-size: 0.8rem; color: var(--color-muted); }
 }
 
 .item-qty {
@@ -55,7 +55,7 @@
     width: 28px;
     height: 28px;
     border: 1.5px solid #ddd;
-    background: #fff;
+    background: var(--color-surface);
     border-radius: 6px;
     font-size: 1rem;
     cursor: pointer;
@@ -73,7 +73,7 @@
 
 .item-subtotal {
   font-weight: 700;
-  color: #c8860a;
+  color: var(--color-accent);
   min-width: 80px;
   text-align: right;
 }
@@ -98,7 +98,7 @@
   border-top: 2px solid #f0f0e8;
   font-size: 1.15rem;
 
-  strong { color: #c8860a; font-size: 1.5rem; }
+  strong { color: var(--color-accent); font-size: 1.5rem; }
 }
 
 .empty-cart {
@@ -110,12 +110,12 @@
   gap: 0.75rem;
 
   span { font-size: 4rem; }
-  h3 { margin: 0; color: #2d3a1a; }
-  p { color: #888; margin: 0; }
+  h3 { margin: 0; color: var(--color-primary-dark); }
+  p { color: var(--color-muted); margin: 0; }
 }
 
 .order-form {
-  background: #fff;
+  background: var(--color-surface);
   border-radius: 16px;
   padding: 1.75rem;
   box-shadow: 0 2px 12px rgba(0,0,0,0.06);
@@ -123,7 +123,7 @@
   h2 {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #2d3a1a;
+    color: var(--color-primary-dark);
     margin: 0 0 1.5rem;
   }
 }
@@ -151,7 +151,7 @@
     box-sizing: border-box;
     font-family: inherit;
 
-    &:focus { border-color: #3d5a2a; }
+    &:focus { border-color: var(--color-primary); }
   }
 
   textarea { resize: vertical; }
@@ -164,7 +164,7 @@
 }
 
 .success-banner {
-  background: #fff;
+  background: var(--color-surface);
   border-radius: 16px;
   padding: 3rem 2rem;
   box-shadow: 0 2px 12px rgba(0,0,0,0.06);
@@ -177,8 +177,8 @@
   margin: 0 auto;
 
   span { font-size: 4rem; }
-  strong { font-size: 1.3rem; color: #2d3a1a; display: block; margin-bottom: 0.5rem; }
-  p { color: #666; margin: 0; }
+  strong { font-size: 1.3rem; color: var(--color-primary-dark); display: block; margin-bottom: 0.5rem; }
+  p { color: var(--color-muted); margin: 0; }
 }
 
 @media (max-width: 900px) {

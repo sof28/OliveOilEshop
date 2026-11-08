@@ -1,0 +1,21 @@
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <strong>{{ site.config.brand.icon }} {{ site.t(site.config.brand.name) }}</strong>
+      <p>{{ site.t(site.config.brand.tagline) }}</p>
+    </div>
+    <nav class="footer-nav">
+      @for (item of site.config.nav; track item.route) {
+        <a [routerLink]="item.route">{{ site.t(item.label) }}</a>
+      }
+    </nav>
+    <div class="footer-contact">
+      <span>{{ site.config.contact.phone }}</span>
+      <span>{{ site.config.contact.email }}</span>
+      <span>{{ site.t(site.config.contact.address) }}</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © {{ year }} {{ site.t(site.config.brand.name) }}. {{ site.t(site.config.footer.text) }}
+  </div>
+</footer>

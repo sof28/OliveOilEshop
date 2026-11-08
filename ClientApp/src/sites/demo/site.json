@@ -1,0 +1,119 @@
+{
+  "siteId": "demo",
+  "defaultLang": "en",
+  "languages": ["en", "el"],
+  "brand": {
+    "name": { "en": "Blue Bottle Co.", "el": "Blue Bottle Co." },
+    "tagline": { "en": "Handmade ceramics", "el": "Χειροποίητη κεραμική" },
+    "logo": "/sites/demo/logo.svg",
+    "icon": "🏺"
+  },
+  "theme": {
+    "primary": "#1f4e79",
+    "primaryDark": "#173a5c",
+    "accent": "#e07a5f",
+    "background": "#f4f7fb",
+    "surface": "#ffffff",
+    "surfaceAlt": "#dce8f5",
+    "text": "#222222",
+    "muted": "#5f6b7a"
+  },
+  "contact": {
+    "phone": "+30 210 000 0000",
+    "email": "hello@example.com",
+    "address": { "en": "Athens, Greece", "el": "Αθήνα, Ελλάδα" }
+  },
+  "promoBar": {
+    "enabled": true,
+    "message": { "en": "Free shipping over €50 with code", "el": "Δωρεάν μεταφορικά άνω των 50€ με τον κωδικό" },
+    "code": "SHIP50"
+  },
+  "nav": [
+    { "label": { "en": "Home", "el": "Αρχική" }, "route": "/" },
+    { "label": { "en": "About", "el": "Σχετικά" }, "route": "/about" },
+    { "label": { "en": "Shop", "el": "Κατάστημα" }, "route": "/products" },
+    { "label": { "en": "Blog", "el": "Blog" }, "route": "/blog" },
+    { "label": { "en": "Contact", "el": "Επικοινωνία" }, "route": "/contact" }
+  ],
+  "hero": {
+    "badge": { "en": "New collection", "el": "Νέα συλλογή" },
+    "title": { "en": "Ceramics made by hand", "el": "Κεραμικά φτιαγμένα στο χέρι" },
+    "subtitle": { "en": "Unique pieces for everyday living.", "el": "Μοναδικά κομμάτια για την καθημερινότητα." },
+    "image": "/sites/demo/hero.webp",
+    "primaryCta": { "label": { "en": "Shop now", "el": "Αγορά τώρα" }, "route": "/products" },
+    "secondaryCta": { "label": { "en": "About us", "el": "Σχετικά" }, "route": "/about" }
+  },
+  "story": {
+    "title": { "en": "Crafted with care", "el": "Φτιαγμένα με φροντίδα" },
+    "subtitle": { "en": "Our workshop", "el": "Το εργαστήριό μας" },
+    "body": { "en": "Every piece is shaped and glazed in our small studio.", "el": "Κάθε κομμάτι διαμορφώνεται στο μικρό μας εργαστήριο." },
+    "image": "/sites/demo/story.webp",
+    "cta": { "label": { "en": "About us", "el": "Σχετικά" }, "route": "/about" }
+  },
+  "features": [
+    { "icon": "🎨", "title": { "en": "Unique", "el": "Μοναδικό" }, "text": { "en": "No two pieces are alike.", "el": "Κανένα κομμάτι δεν είναι ίδιο." } },
+    { "icon": "🔥", "title": { "en": "Kiln fired", "el": "Ψημένο" }, "text": { "en": "Durable and food safe.", "el": "Ανθεκτικό και ασφαλές." } },
+    { "icon": "📦", "title": { "en": "Safe packaging", "el": "Ασφαλής συσκευασία" }, "text": { "en": "Delivered intact.", "el": "Παράδοση χωρίς ζημιά." } }
+  ],
+  "featuredProducts": {
+    "title": { "en": "Featured", "el": "Προτεινόμενα" },
+    "subtitle": { "en": "Our favourites this season.", "el": "Τα αγαπημένα μας της σεζόν." },
+    "count": 3,
+    "cta": { "label": { "en": "All products", "el": "Όλα τα προϊόντα" }, "route": "/products" }
+  },
+  "blogTeaser": {
+    "title": { "en": "Blog", "el": "Blog" },
+    "readMore": { "en": "Read more »", "el": "Διαβάστε περισσότερα »" },
+    "posts": []
+  },
+  "contactSection": {
+    "title": { "en": "Contact us", "el": "Επικοινωνία" },
+    "text": { "en": "Send us a message and we will reply soon.", "el": "Στείλτε μας μήνυμα και θα απαντήσουμε σύντομα." }
+  },
+  "footer": {
+    "text": { "en": "All rights reserved.", "el": "Με επιφύλαξη παντός δικαιώματος." }
+  },
+  "labels": {
+    "login": { "en": "Sign in", "el": "Σύνδεση" },
+    "logout": { "en": "Sign out", "el": "Αποσύνδεση" },
+    "admin": { "en": "Admin", "el": "Διαχείριση" },
+    "wishlist": { "en": "Wishlist", "el": "Αγαπημένα" },
+    "cart": { "en": "Cart", "el": "Καλάθι" },
+    "contact": { "en": "Contact us", "el": "Επικοινωνία" },
+    "shopTitle": { "en": "Shop", "el": "Κατάστημα" },
+    "shopSubtitle": { "en": "Browse our handmade pieces.", "el": "Δείτε τα χειροποίητα κομμάτια μας." },
+    "addToCart": { "en": "Add to cart", "el": "Προσθήκη στο καλάθι" },
+    "addedToCart": { "en": "Added to cart!", "el": "Προστέθηκε στο καλάθι!" },
+    "loading": { "en": "Loading products...", "el": "Φόρτωση προϊόντων..." },
+    "loadError": { "en": "Failed to load products.", "el": "Αποτυχία φόρτωσης προϊόντων." },
+    "empty": { "en": "No products available yet.", "el": "Δεν υπάρχουν προϊόντα ακόμα." },
+    "allCategories": { "en": "All", "el": "Όλα" },
+    "backToShop": { "en": "« Back to shop", "el": "« Πίσω στο κατάστημα" },
+    "notFound": { "en": "Product not found.", "el": "Το προϊόν δεν βρέθηκε." },
+    "outOfStock": { "en": "Out of stock", "el": "Μη διαθέσιμο" },
+    "sku": { "en": "SKU", "el": "Κωδικός" },
+    "cartTitle": { "en": "Your cart", "el": "Το καλάθι σας" },
+    "cartEmpty": { "en": "Your cart is empty", "el": "Το καλάθι σας είναι άδειο" },
+    "cartEmptyText": { "en": "Add some products to get started!", "el": "Προσθέστε προϊόντα για να ξεκινήσετε!" },
+    "browseProducts": { "en": "Browse products", "el": "Δείτε τα προϊόντα" },
+    "each": { "en": "each", "el": "το τεμάχιο" },
+    "total": { "en": "Total", "el": "Σύνολο" },
+    "remove": { "en": "Remove", "el": "Αφαίρεση" },
+    "placeOrderTitle": { "en": "Place your order", "el": "Ολοκλήρωση παραγγελίας" },
+    "fullName": { "en": "Full name", "el": "Ονοματεπώνυμο" },
+    "emailAddress": { "en": "Email address", "el": "Διεύθυνση email" },
+    "deliveryAddress": { "en": "Delivery address", "el": "Διεύθυνση παράδοσης" },
+    "placeOrder": { "en": "Place order", "el": "Παραγγελία" },
+    "placingOrder": { "en": "Placing order...", "el": "Αποστολή παραγγελίας..." },
+    "orderSuccess": { "en": "Order placed successfully!", "el": "Η παραγγελία καταχωρήθηκε!" },
+    "orderSuccessText": { "en": "Thank you for your purchase.", "el": "Ευχαριστούμε για την αγορά σας." },
+    "continueShopping": { "en": "Continue shopping", "el": "Συνέχεια αγορών" },
+    "orderError": { "en": "Failed to place order. Please try again.", "el": "Αποτυχία παραγγελίας. Δοκιμάστε ξανά." }
+  },
+  "flags": {
+    "wishlist": true,
+    "blog": true,
+    "accounts": true,
+    "contactForm": true
+  }
+}

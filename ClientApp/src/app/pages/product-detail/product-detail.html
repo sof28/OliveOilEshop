@@ -1,0 +1,39 @@
+<section class="detail">
+  <div class="container">
+    <a routerLink="/products" class="back">{{ site.label('backToShop') }}</a>
+
+    @if (loading()) {
+      <p class="state">{{ site.label('loading') }}</p>
+    } @else if (product(); as p) {
+      <div class="detail-grid">
+        <div class="detail-image">
+          @if (p.imageUrl) {
+            <img [src]="p.imageUrl" [alt]="p.name" />
+          } @else {
+            <div class="placeholder">{{ site.config.brand.icon }}</div>
+          }
+        </div>
+        <div class="detail-info">
+          @if (p.categoryName) {
+            <p class="category">{{ p.categoryName }}</p>
+          }
+          <h1>{{ p.name }}</h1>
+          <p class="price">{{ p.price | currency: 'EUR' }}</p>
+          <p class="description">{{ p.description }}</p>
+          @if (p.sku) {
+            <p class="sku">{{ site.label('sku') }}: {{ p.sku }}</p>
+          }
+          @if (inStock()) {
+            <button class="btn btn-primary btn-large" (click)="addToCart()">
+              {{ added() ? site.label('addedToCart') : site.label('addToCart') }}
+            </button>
+          } @else {
+            <p class="out-of-stock">{{ site.label('outOfStock') }}</p>
+          }
+        </div>
+      </div>
+    } @else {
+      <p class="state">{{ site.label('notFound') }}</p>
+    }
+  </div>
+</section>
